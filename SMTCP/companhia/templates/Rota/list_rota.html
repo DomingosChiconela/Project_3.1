@@ -1,0 +1,41 @@
+{% extends 'base/teste.html' %} 
+{% load crispy_forms_tags %}
+{%block title %}lista de Rota{% endblock %}
+<div class="container" id="teste">
+{% block content %}
+
+
+<div class="offset-1 col-10 list-div">
+    <a id="add-link"href="/addrota/">
+    <div class="col-2 add-div">
+        <i class="fas fa-plus"></i> Adicionar
+    </div>
+</a>
+    <div class="col-9 search-div">
+        <form method="GET" id="search-form">
+            <input class="form-control" type="text" id="search" name="search" placeholder="Digite o nome da rota  para buscar..." value="{{ request.GET.search }}">
+            <i class="fas fa-search" id="search-btn"></i>
+        </form>
+    </div>
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+<ul class="task-list">
+    {% for  li in lista %}
+    <li class="task-item">
+        <span><a href="/task/{{li.id}}">{{li.nome}}</span>
+      
+        
+        <a href="/edit_rota/{{li.id}}"><span><i class="fas fa-edit"></i></span></a>
+        <a href="/delete_rota/{{li.id}}" class="delete-btn"><span><i class="fas fa-trash"></i></span></a>
+    </li>
+    {% endfor %}
+</ul>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+{%  endblock %}
+</div>

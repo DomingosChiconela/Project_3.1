@@ -1,0 +1,59 @@
+{% extends 'bases/teste.html' %}
+
+{% block content %}
+
+<div class" container">
+  <div class="visaopassa">
+    <h3 class="categoria"> Passageiros:</h3>
+    <ul class="con">
+    {% for passageiro in passageiros %}
+      <li class="conteudo">
+        
+        <span class="texto">{{ passageiro.nome }}</span>
+     
+      <input type="checkbox" class="confirmacao" name="newsletter" >
+
+   
+       </li>
+    {% endfor %}
+  </ul>
+</div>
+  <div class="pagination">
+    <span class="step-links">
+        {% if passageiros.has_previous %}
+            <a href="?page={{ passageiros.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
+        {% endif %}
+
+       
+        {% if passageiros.paginator.num_pages %}
+        <span class="current">
+            {{ passageiros.number }} de {{ passageiros.paginator.num_pages }}
+        </span>
+        {% endif %}
+
+        {% if passageiros.has_next %}
+            <a href="?page={{ passageiros.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
+        {% endif %}
+    </span>
+  </div>
+  <div class="visaomoto">
+  <h3 class="categoria"> Motoristas:</h3>
+  <ul class="con">
+    {% for moto in motorrista %}
+      <li class="conteudo">
+        
+        <span class="texto">{{ moto.nome }}</span>
+     
+<input type="checkbox" class="confirmacao" name="newsletter" >
+
+   
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+
+</div>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+{% endblock %}

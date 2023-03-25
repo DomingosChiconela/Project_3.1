@@ -1,0 +1,84 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="styles.css">
+   
+   <script src="https://kit.fontawesome.com/c21474a7b2.js" crossorigin="anonymous"></script>
+   
+
+   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>{% block title %}{% endblock  %}</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="top_navbar">
+          <div class="hamburger">
+             <div class="one"></div>
+             <div class="two"></div>
+             <div class="three"></div>
+          </div>
+          <div class="top_menu">
+            <div class="logo">logo</div>
+            <ul>
+              <li><a href="#">
+                <i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i></a></li>
+              <li><a href="#">
+                <i class="fas fa-bell"></i>
+                </a></li>
+              <li><a href="#">
+                <i class="fas fa-user"></i>
+                </a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="sidebar">
+            <ul>
+              <li><a href=".">
+                <span class="icon"><i class="fa-solid fa-house"></i></span>
+                <span class="title">Home</span></a></li>
+        
+                <li><a id="add-link" href="/motorista/">
+                  <span class="icon"><i class="fa-solid fa-person"></i></span>
+                  <span class="title">Motorista</span>
+                  </a></li>
+              <li><a id="add-link" href="/viatura/">
+                <span class="icon"><i class="fa-solid fa-car"></i></span>
+                <span class="title">Viatura</span>
+                </a></li>
+                <li> <a id="add-link" href="/rota/">
+                  <span class="icon"> <i class="fa-solid fa-road"></i></span>
+                  <span class="title">Rota</span>
+                  </a></li> 
+                <li> <a id="add-link" href="/viagem/">
+                  <span class="icon"><i class="fa-solid fa-earth-africa"></i></span>
+                  <span class="title">Viagem</span>
+                </a></li>
+          </ul>
+
+        </div>
+        
+        <div class="main_container">
+         
+            {% block content %}  {% endblock %}
+
+            
+        
+          
+        </div>
+        
+      </div>
+
+
+     
+    
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

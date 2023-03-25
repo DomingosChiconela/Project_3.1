@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import Passageiro
 
-# Register your models here.
+
+@admin.register(Passageiro)
+class passagueirosAdmin(admin.ModelAdmin):
+    search_fields=('nome',)
+    

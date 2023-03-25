@@ -1,0 +1,14 @@
+{% extends 'base/teste.html' %} 
+{%block title %}login{% endblock %}
+
+{% block content %}
+
+<div class="col-9  formu">
+<form method="POST">
+    {%csrf_token%}
+    {{form.}}
+
+ <input type="submit" class=" btn btn-success" value="Salvar">
+</form>
+</div>
+{%  endblock %}
