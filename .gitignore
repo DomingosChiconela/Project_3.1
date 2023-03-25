@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#my
+SMTCP/SMTCP/settings.py 
+settings.py 
